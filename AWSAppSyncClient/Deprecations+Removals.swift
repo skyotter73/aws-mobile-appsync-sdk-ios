@@ -92,12 +92,12 @@ public protocol MutationCache {
 
 public extension AWSAppSyncClientConfiguration {
     @available(*, deprecated, message: "Use an initializer that takes cacheConfiguration instead of databaseURL")
-    public convenience init(appSyncServiceConfig: AWSAppSyncServiceConfigProvider,
-                            networkTransport: AWSNetworkTransport,
-                            databaseURL: URL?,
-                            connectionStateChangeHandler: ConnectionStateChangeHandler? = nil,
-                            s3ObjectManager: AWSS3ObjectManager? = nil,
-                            presignedURLClient: AWSS3ObjectPresignedURLGenerator? = nil) {
+    convenience init(appSyncServiceConfig: AWSAppSyncServiceConfigProvider,
+                     networkTransport: AWSNetworkTransport,
+                     databaseURL: URL?,
+                     connectionStateChangeHandler: ConnectionStateChangeHandler? = nil,
+                     s3ObjectManager: AWSS3ObjectManager? = nil,
+                     presignedURLClient: AWSS3ObjectPresignedURLGenerator? = nil) {
 
         self.init(appSyncServiceConfig: appSyncServiceConfig,
                   networkTransport: networkTransport,
@@ -108,13 +108,13 @@ public extension AWSAppSyncClientConfiguration {
     }
 
     @available(*, deprecated, message: "Use an initializer that takes cacheConfiguration instead of databaseURL")
-    public convenience init(url: URL,
-                            serviceRegion: AWSRegionType,
-                            networkTransport: AWSNetworkTransport,
-                            databaseURL: URL?,
-                            connectionStateChangeHandler: ConnectionStateChangeHandler? = nil,
-                            s3ObjectManager: AWSS3ObjectManager? = nil,
-                            presignedURLClient: AWSS3ObjectPresignedURLGenerator? = nil) {
+    convenience init(url: URL,
+                     serviceRegion: AWSRegionType,
+                     networkTransport: AWSNetworkTransport,
+                     databaseURL: URL?,
+                     connectionStateChangeHandler: ConnectionStateChangeHandler? = nil,
+                     s3ObjectManager: AWSS3ObjectManager? = nil,
+                     presignedURLClient: AWSS3ObjectPresignedURLGenerator? = nil) {
         self.init(url: url,
                   serviceRegion: serviceRegion,
                   networkTransport: networkTransport,
@@ -125,17 +125,17 @@ public extension AWSAppSyncClientConfiguration {
     }
 
     @available(*, deprecated, message: "Use an initializer that takes cacheConfiguration instead of databaseURL")
-    public convenience init(url: URL,
-                            serviceRegion: AWSRegionType,
-                            apiKeyAuthProvider: AWSAPIKeyAuthProvider? = nil,
-                            credentialsProvider: AWSCredentialsProvider? = nil,
-                            oidcAuthProvider: AWSOIDCAuthProvider? = nil,
-                            userPoolsAuthProvider: AWSCognitoUserPoolsAuthProvider? = nil,
-                            urlSessionConfiguration: URLSessionConfiguration = URLSessionConfiguration.default,
-                            databaseURL: URL?,
-                            connectionStateChangeHandler: ConnectionStateChangeHandler? = nil,
-                            s3ObjectManager: AWSS3ObjectManager? = nil,
-                            presignedURLClient: AWSS3ObjectPresignedURLGenerator? = nil) throws {
+    convenience init(url: URL,
+                     serviceRegion: AWSRegionType,
+                     apiKeyAuthProvider: AWSAPIKeyAuthProvider? = nil,
+                     credentialsProvider: AWSCredentialsProvider? = nil,
+                     oidcAuthProvider: AWSOIDCAuthProvider? = nil,
+                     userPoolsAuthProvider: AWSCognitoUserPoolsAuthProvider? = nil,
+                     urlSessionConfiguration: URLSessionConfiguration = URLSessionConfiguration.default,
+                     databaseURL: URL?,
+                     connectionStateChangeHandler: ConnectionStateChangeHandler? = nil,
+                     s3ObjectManager: AWSS3ObjectManager? = nil,
+                     presignedURLClient: AWSS3ObjectPresignedURLGenerator? = nil) throws {
         try self.init(url: url,
                       serviceRegion: serviceRegion,
                       apiKeyAuthProvider: apiKeyAuthProvider,
@@ -150,16 +150,16 @@ public extension AWSAppSyncClientConfiguration {
     }
 
     @available(*, deprecated, message: "Use an initializer that takes cacheConfiguration instead of databaseURL")
-    public convenience init(appSyncServiceConfig: AWSAppSyncServiceConfigProvider,
-                            apiKeyAuthProvider: AWSAPIKeyAuthProvider? = nil,
-                            credentialsProvider: AWSCredentialsProvider? = nil,
-                            oidcAuthProvider: AWSOIDCAuthProvider? = nil,
-                            userPoolsAuthProvider: AWSCognitoUserPoolsAuthProvider? = nil,
-                            urlSessionConfiguration: URLSessionConfiguration = URLSessionConfiguration.default,
-                            databaseURL: URL?,
-                            connectionStateChangeHandler: ConnectionStateChangeHandler? = nil,
-                            s3ObjectManager: AWSS3ObjectManager? = nil,
-                            presignedURLClient: AWSS3ObjectPresignedURLGenerator? = nil) throws {
+    convenience init(appSyncServiceConfig: AWSAppSyncServiceConfigProvider,
+                     apiKeyAuthProvider: AWSAPIKeyAuthProvider? = nil,
+                     credentialsProvider: AWSCredentialsProvider? = nil,
+                     oidcAuthProvider: AWSOIDCAuthProvider? = nil,
+                     userPoolsAuthProvider: AWSCognitoUserPoolsAuthProvider? = nil,
+                     urlSessionConfiguration: URLSessionConfiguration = URLSessionConfiguration.default,
+                     databaseURL: URL?,
+                     connectionStateChangeHandler: ConnectionStateChangeHandler? = nil,
+                     s3ObjectManager: AWSS3ObjectManager? = nil,
+                     presignedURLClient: AWSS3ObjectPresignedURLGenerator? = nil) throws {
         try self.init(appSyncServiceConfig: appSyncServiceConfig,
             apiKeyAuthProvider: apiKeyAuthProvider,
             credentialsProvider: credentialsProvider,
