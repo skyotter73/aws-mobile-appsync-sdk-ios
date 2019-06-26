@@ -7,8 +7,18 @@ also includes support for offline operations.
 
 ### Bug Fixes
 
-* Fix a bug where delta sync was not correctly storing/ retrieving the `lastSyncTime`. See [issue #232](https://github.com/awslabs/aws-mobile-appsync-sdk-ios/issues/232)
-* **Breaking API Change** To fix the delta sync logic, there was a change in the hashing function used internally. This change can cause the existing app to ignore the cache for the first sync and fetch data using base query. Subsequent sync operation should work as normal.
+- Fix a bug where delta sync was not correctly storing/ retrieving the `lastSyncTime`. See [issue #232](https://github.com/awslabs/aws-mobile-appsync-sdk-ios/issues/232)
+- Fix retain cycles in some auth providers. See [issue #227](https://github.com/awslabs/aws-mobile-appsync-sdk-ios/issues/227)
+
+* **Breaking API Changes**
+- To fix the delta sync logic, there was a change in the hashing function used internally. This change can cause the existing app to ignore the cache for
+  the first sync and fetch data using base query. Subsequent sync operation should work as normal.
+- Some protocols are now class-only:
+  - AWSAppSyncOfflineMutationDelegate
+  - AWSOIDCAuthProvider and protocols that inherit from it:
+    - AWSOIDCAuthProviderAsync
+    - AWSCognitoUserPoolsAuthProviderAsync
+    - AWSCognitoUserPoolsAuthProvider
 
 ## 2.13.1
 

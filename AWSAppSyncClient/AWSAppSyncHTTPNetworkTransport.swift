@@ -12,10 +12,12 @@ public class AWSAppSyncHTTPNetworkTransport: AWSNetworkTransport {
     let session: URLSession
     var region: AWSRegionType? = nil
     let serializationFormat = JSONSerializationFormat.self
-    var credentialsProvider: AWSCredentialsProvider? = nil
+
+    weak var credentialsProvider: AWSCredentialsProvider? = nil
+    weak var oidcAuthProvider: AWSOIDCAuthProvider? = nil
+    weak var userPoolsAuthProvider: AWSCognitoUserPoolsAuthProvider? = nil
     var apiKeyAuthProvider: AWSAPIKeyAuthProvider? = nil
-    var userPoolsAuthProvider: AWSCognitoUserPoolsAuthProvider? = nil
-    var oidcAuthProvider: AWSOIDCAuthProvider? = nil
+
     var endpoint: AWSEndpoint? = nil
     let authType: AWSAppSyncAuthType
     var retryStrategy: AWSAppSyncRetryStrategy
